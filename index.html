@@ -5255,38 +5255,20 @@ window.onload = init;
 <pre id="data">
 # Troque estes dados pelos seus, separados por TABs ou espaços
 # A data é no formato ANO-MES-DIA
-
-2011-11-01    -100,00    Saldo inicial da conta :(
-
-2011-12-15     -74,23    mercado|
-2011-12-23     -39,90    presente, livro| Livro "Horóscopo dos Duendes"
-
-2012-01-03    -342,59    presente| Um Shrubbery
-2012-01-11     +30,00    Ganhei a aposta com o Zé
-2012-01-12     -35,00    presente, nerd| Poster colorido 3D do Tux em Ascii Art
-2012-01-29     -95,67    mercado|
-
-2012-02-12    -199,90    presente| Segway usado no Mercado Livre
-
-2012-03-20     -10,00    Carnê do Baú
-
 # A ordem não importa, é possível deixar juntas as transações periódicas
+# Lançamento deve ser feito da seguinte forma
+# Data ANO-MES-DIA Valor(com - para despesa e + para receita) Tag(para separar por tipos de despesa) Descrição em seguida antes coloca | 
 
-2011-12-05     500       salário|
-2012-01-05     500       salário|
-2012-02-05     500       salário|
-2012-03-05     500       salário|
-2012-04-05     500       salário|
+2022-01-01      0,00     Saldo inicial da conta
+
+2022-05-01      0,00     salário| Salário do mês de Janeiro 
+
+2022-05-01     -100,00   mercado| Compra de frutas e legumes
+2011-12-23     -40,00    presente, livro| Livro de Lego
 
 2011-12-07     -25,00    luz|
-2012-01-07     -20,00    luz|
-2012-02-07     -29,00    luz|
-2012-03-07     -25,00    luz|
 
 2011-12-07     -20,00    água|
-2012-01-07     -17,80    água|
-2012-02-07     -32,37    água|
-2012-03-07     -30,00    água|
 
 # Transações futuras!
 
@@ -5294,7 +5276,7 @@ window.onload = init;
 
 # Pagamentos e ganhos parcelados: use uma / e o número de meses
 
-2011-12-05    -500/5     nerd| Netbook usado comprado parcelado
+2011-12-05    -500/5     compras| Netbook teste compra parcelado
 2011-11-25     100/2     presente| Presente de Natal, metade Nov, metade Dez
 
 # Pagamentos e ganhos recorrentes: use um * e o número de meses
