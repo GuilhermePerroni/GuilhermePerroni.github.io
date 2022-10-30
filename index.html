@@ -5258,31 +5258,21 @@ window.onload = init;
 # A ordem não importa, é possível deixar juntas as transações periódicas
 # Lançamento deve ser feito da seguinte forma
 # Data ANO-MES-DIA Valor(com - para despesa e + para receita) Tag(para separar por tipos de despesa) Descrição em seguida antes coloca | 
-
-2022-01-01      0,00     Saldo inicial da conta
-
-2022-05-01      0,00     salário| Salário do mês de Janeiro 
-
-2022-05-01     -100,00   mercado| Compra de frutas e legumes
-2011-12-23     -40,00    presente, livro| Livro de Lego
-
-2011-12-07     -25,00    luz|
-
-2011-12-07     -20,00    água|
-
 # Transações futuras!
-
-2012-07-31     +99,99    salário| Bônus
-
-# Pagamentos e ganhos parcelados: use uma / e o número de meses
-
-2011-12-05    -500/5     compras| Netbook teste compra parcelado
-2011-11-25     100/2     presente| Presente de Natal, metade Nov, metade Dez
-
+# 2012-07-31     +99,99    salário| Bônus
 # Pagamentos e ganhos recorrentes: use um * e o número de meses
+# 2012-01-05    -200*6     aluguel| Aluguel da casa (seis meses)
+# 2011-11-10     100*2     presente| O Zé vai me dar 100 pilas por mês até o fim do ano
+# Pagamentos e ganhos parcelados: use uma / e o número de meses
+# 2022-01-01    -10/2     compras | Netbook teste compra parcelado
+# 2022-01-01     10/2     presente| Presente de Natal, metade Nov, metade Dez
 
-2012-01-05    -200*6     aluguel| Aluguel da casa (seis meses)
-2011-11-10     100*2     presente| O Zé vai me dar 100 pilas por mês até o fim do ano
+
+2022-01-01       0,00     Saldo inicial da conta
+2022-01-01      +0,00     salário| Salário do mês de Janeiro 
+2022-01-01      -0,00     água   | Conta de Agua
+ 
+
 </pre>
 
 </div><!-- #container -->
