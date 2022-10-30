@@ -3999,6 +3999,11 @@ function saveLocalData() {
 	editButton.innerHTML = i18n.msgSaving;
 	localStorage.setItem(localStorageKey, document.getElementById('editor-data').value);
 
+
+	//localStorage.setItem(localStorageKey, "2022-01-01      -0,00     guigui   | Conta de Agua");
+
+	// meu teste pai localStorage.setItem(localStorageKey, document.getElementById('editor-data').value+ "2030-02-05     12        pix|");
+
 	// Save currently selected tags
 	initSelectedTags = getSelectedTags();
 	initExcludedTags = getExcludedTags();
