@@ -60,14 +60,30 @@
             background: var(--bordo);
             transform: translateY(-2px);
         }
+
+        .navbar-nav .nav-link.tool-link {
+            color: white !important;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+        }
+
+        .navbar-nav .nav-link.tool-link:hover {
+            border-color: var(--bordo);
+        }
         
         .navbar-toggler {
             border: none;
+            min-width: 44px;
+            min-height: 44px;
             padding: 0.25rem 0.5rem;
         }
         
         .navbar-toggler:focus {
             box-shadow: none;
+        }
+
+        .navbar-toggler:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 3px;
         }
         
         .navbar-toggler-icon {
@@ -468,6 +484,37 @@
             box-shadow: 0 8px 20px rgba(122, 28, 28, 0.4);
             color: white;
         }
+
+        .hero-tool-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            margin-top: 2rem;
+            padding: 0.9rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            border-radius: 25px;
+            color: white;
+            background: rgba(26, 26, 26, 0.38);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-tool-cta:hover {
+            color: white;
+            border-color: var(--prata);
+            background: var(--bordo);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-tool-cta:focus-visible,
+        .navbar-nav .nav-link.tool-link:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 3px;
+        }
         
         /* Contact Section */
         .contact-section {
@@ -804,16 +851,27 @@
                 font-size: 1.3rem;
             }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-xl navbar-custom fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
                 <i class="fas fa-code me-2"></i>Guilherme Perroni
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu de navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -829,6 +887,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tool-link" href="./comparador-instagram/index.html">
+                            <i class="fab fa-instagram me-1"></i>Comparador
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contato">Contato</a>
@@ -870,6 +933,11 @@
                                 <i class="fas fa-fist-raised me-2"></i>Faixa Preta Kickboxing + 10 Anos
                             </span>
                         </div>
+                        <a class="hero-tool-cta fade-in" href="./comparador-instagram/index.html">
+                            <i class="fab fa-instagram"></i>
+                            Comparar seguidores grátis
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1102,6 +1170,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         // Smooth scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -1130,7 +1200,7 @@
                     const offsetTop = target.offsetTop - 80; // Account for fixed navbar
                     window.scrollTo({
                         top: offsetTop,
-                        behavior: 'smooth'
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth'
                     });
                 }
             });
